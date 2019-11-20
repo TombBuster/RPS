@@ -100,7 +100,7 @@ class Player {
         } catch(Exception e) {
             System.out.println("Max money reached! Any extra money has been donated to a charity of our choosing." +
                     "Your generosity is much appreciated!");
-            balance = 2147483647;
+            balance = Integer.MAX_VALUE;
         }
     }
 
