@@ -6,6 +6,7 @@ import java.util.Random;
 
 public class Main {
 
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Rock, Paper, Scissors!");
@@ -17,6 +18,7 @@ public class Main {
             balance = Integer.parseInt(scanner.nextLine());
         } catch(Exception e) {
             System.out.println("Invalid type. Please enter a number:");
+            continue;
         }
         if (balance <= 0) {
             System.out.println("Please enter a positive value:");
@@ -36,6 +38,7 @@ public class Main {
                     bet = Integer.parseInt(scanner.nextLine());
                 } catch(Exception e) {
                     System.out.println("Invalid type. Please enter a number:");
+                    continue;
                 }
                 if (bet > balance) {
                     System.out.println("You don't have enough money for that bet. Please enter a lower amount:");
