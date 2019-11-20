@@ -1,9 +1,7 @@
 package com.company;
-
 import java.util.Arrays;
 
 public class Main {
-
 
     public static void main(String[] args) {
         String[] choices = {"Rock", "Paper", "Scissors"};
@@ -24,6 +22,11 @@ public class Main {
             System.out.println("Your choice was: " + playerChoice);
 
             // Computer choice:
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.err.println(e);
+            }
             Computer computer = new Computer();
             computer.setChoice();
             String compChoice = computer.getChoice();
@@ -41,10 +44,20 @@ public class Main {
 
             // determines whether player won and resolves bet accordingly:
 
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.err.println(e);
+            }
             int bet = player.getBet();
             int money = game.determineWin(result, bet);
             player.addToBalance(money);
             balance = player.getBalance();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.err.println(e);
+            }
 
             // Replay:
             System.out.println("Your balance is: " + balance);

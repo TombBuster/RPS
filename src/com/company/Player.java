@@ -57,7 +57,7 @@ class Player {
         Scanner scanner = new Scanner(System.in);
         String playerChoice = "Random";
         boolean isValidChoice = false;
-        String[] choices = {"Rock", "Paper", "Scissors", "Random"};
+        String[] choices = {"Rock", "R", "Paper", "P", "Scissors", "S", "Random", "Ran"};
         int choicesLength = choices.length;
         while (!isValidChoice) {
             System.out.println("Please choose an option: ");
@@ -70,6 +70,19 @@ class Player {
                     break;
                 }
             }
+            switch (playerChoice) {
+                case "R":
+                    playerChoice = "Rock";
+                    break;
+                case "P":
+                    playerChoice = "Paper";
+                    break;
+                case "S":
+                    playerChoice = "Scissors";
+                    break;
+                case "Ran":
+                    playerChoice = "Random";
+            }
         }
 
         if (playerChoice.equals("Random")) {
@@ -77,6 +90,7 @@ class Player {
             int randomPlayerNumber = rPlayer.nextInt(choicesLength);
             playerChoice = choices[randomPlayerNumber];
         }
+
         this.choice = playerChoice;
     }
 
