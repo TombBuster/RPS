@@ -12,22 +12,26 @@ public class Main {
 	    while (isReplaying) {
             // Player choice:
 
-            System.out.println("Please choose an option: ");
             String playerChoice = "null";
             boolean isNotValidChoice = true;
-            String[] choices = {"Rock", "Paper", "Scissors"};
+            String[] choices = {"Rock", "Paper", "Scissors", "Random"};
             int choicesLength = choices.length;
         while (isNotValidChoice) {
+            System.out.println("Please choose an option: ");
             playerChoice = scanner.nextLine();
+            // Case insensitive
+            playerChoice = playerChoice.substring(0, 1).toUpperCase() + playerChoice.substring(1).toLowerCase();
             for (String choice: choices) {
                 if (playerChoice.equals(choice)) {
                     isNotValidChoice = false;
                 }
             }
         }
-//            Random rPlayer = new Random();
-//            int randomPlayerNumber = rPlayer.nextInt(choicesLength);
-//            playerChoice = choices[randomPlayerNumber];
+            if (playerChoice.equals("Random")) {
+                Random rPlayer = new Random();
+                int randomPlayerNumber = rPlayer.nextInt(choicesLength);
+                playerChoice = choices[randomPlayerNumber];
+            }
             System.out.println("Your choice was: " + playerChoice);
 
             // Computer choice:
@@ -36,11 +40,12 @@ public class Main {
             String compChoice = choices[randomNumber];
             System.out.println("The computer chose: " + compChoice);
 
-            // Choice logic:
+            // Choice logic, string position in array is important here:
             int playerIndex = Arrays.asList(choices).indexOf(playerChoice);
             int compIndex = Arrays.asList(choices).indexOf(compChoice);
-
             int result = (playerIndex - compIndex) % choicesLength;
+
+            // Java % returns remainder rather than modulo, so need to correct negative numbers:
             if (result < 0) {
                 result += choicesLength;
             }
