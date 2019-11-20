@@ -34,4 +34,27 @@ class Game {
         }
     }
 
+    public void asciiArt() {
+        System.out.println("    _______\n" +
+                "---'   ____)\n" +
+                "      (_____)\n" +
+                "      (_____)\n" +
+                "      (____)\n" +
+                "---.__(___)");
+        System.out.println("     _______\n" +
+                "---'    ____)____\n" +
+                "           ______)\n" +
+                "          _______)\n" +
+                "         _______)\n" +
+                "---.__________)");
+        System.out.println("    _______\n" +
+                "---'   ____)____\n" +
+                "          ______)\n" +
+                "       __________)\n" +
+                "      (____)\n" +
+                "---.__(___)");
+
+        System.out.println("Welcome to Rock, Paper, Scissors!");
+    }
+
 }

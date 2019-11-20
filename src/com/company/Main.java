@@ -7,7 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
         String[] choices = {"Rock", "Paper", "Scissors"};
-        System.out.println("Welcome to Rock, Paper, Scissors!");
+        Game game = new Game();
+        game.asciiArt();
         Player player = new Player();
         player.setBalance();
         int initialBalance = player.getBalance();
@@ -39,7 +40,7 @@ public class Main {
             }
 
             // determines whether player won and resolves bet accordingly:
-            Game game = new Game();
+
             int bet = player.getBet();
             int money = game.determineWin(result, bet);
             player.addToBalance(money);
