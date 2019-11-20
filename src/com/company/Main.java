@@ -32,7 +32,7 @@ public class Main {
             boolean isValidBet = false;
             while (!isValidBet) {
                 try {
-                    System.out.println("Please enter a bet: ");
+                    System.out.println("Please enter an amount to bet: ");
                     bet = Integer.parseInt(scanner.nextLine());
                 } catch(Exception e) {
                     System.out.println("Invalid type. Please enter a number:");
