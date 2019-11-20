@@ -64,6 +64,8 @@ public class Main {
             if (balance == 0) {
                 System.out.println("You have no more money left to bet! Credit betting is not permitted here.");
                 isReplaying = false;
+            } else if (balance == 2147483647) {
+                isReplaying = false;
             } else {
                 isReplaying = game.isReplay();
             }

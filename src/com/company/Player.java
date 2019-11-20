@@ -95,7 +95,13 @@ class Player {
     }
 
     void addToBalance(int money) {
-        this.balance += money;
+        try {
+            balance = Math.addExact(balance, money);
+        } catch(Exception e) {
+            System.out.println("Max money reached! Any extra money has been donated to a charity of our choosing." +
+                    "Your generosity is much appreciated!");
+            balance = 2147483647;
+        }
     }
 
     void finalBalance(int initialBalance) {
